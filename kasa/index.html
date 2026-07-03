@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>CASH-CONTROLER</title>
+
+    <style>
+        body {
+            background-color: #a3daa6;
+        }
+
+        .chart {
+            width: 200px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            /* Początkowy wygląd */
+            background: conic-gradient(
+                lightgray 0%,
+                lightgray 100%
+            );
+        }
+
+        .chart::before {
+            content: "";
+            position: absolute;
+
+            width: 150px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+
+            background: white;
+        }
+
+        .chart span {
+            position: relative;
+            z-index: 1;
+            font-size: 28px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<div class="chart" id="chart" >
+    <span id="value">0 zł</span>
+</div>
+
+<br>
+
+<input id="start" type="number" placeholder="Kwota początkowa">
+<input id="spent" type="number" placeholder="Wydano">
+<button onclick="updateChart()">Oblicz</button>
+
+<script>
+function updateChart() {
+    const start = Number(document.getElementById("start").value);
+    const spent = Number(document.getElementById("spent").value);
+
+    if (start <= 0) {
+        alert("Podaj poprawną kwotę początkową.");
+        return;
+    }
+
+    const left = start - spent;
+    const percent = (left / start) * 100;
+
+    const chart = document.getElementById("chart");
+
+    chart.style.background = `conic-gradient(
+        limegreen ${percent}%,
+        lightgray 0%
+    )`;
+
+    document.getElementById("value").textContent = `${left} zł`;
+}
+</script>
+
+</body>
+</html>

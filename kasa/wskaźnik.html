@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>
+        .circle-indicator {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    position: absolute;
+    transform: rotate(-90deg); /* Obraca wskaźnik, aby zaczynał się od góry */
+}
+
+circle {
+    fill: none;
+    stroke-width: 15px; /* Grubość linii */
+}
+
+circle.bg {
+    stroke: #e6e6e6; /* Kolor tła */
+}
+
+circle.meter {
+    stroke: #3498db; /* Kolor wskaźnika */
+    stroke-linecap: round; /* Zaokrąglone końce linii */
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.percentage {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <div class="circle-indicator">
+    <svg width="200" height="200">
+        <!-- Tło wskaźnika -->
+        <circle class="bg" cx="100" cy="100" r="70"></circle>
+        <!-- Wskaźnik właściwy (np. ustawiony na 75%) -->
+        <circle class="meter" cx="100" cy="100" r="70" stroke-dasharray="1673" stroke-dashoffset="110"></circle>
+    </svg>
+    <!-- Tekst w środku wskaźnika -->
+    <div class="percentage">75%</div>
+</div>
+
+</body>
+</html>
