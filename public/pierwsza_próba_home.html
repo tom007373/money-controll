@@ -64,7 +64,7 @@
             top: 0;
             right: -300px;      
             width: 300px;
-            
+            top: 14px;
             background: rgba(37, 129, 0, 0.356);
             
             transition: right 0.3s ease;
@@ -74,6 +74,8 @@
             justify-content: space-between;
             align-items: flex-start;
             border: 1px solid rgb(0, 158, 0);
+            font-family: "Saira Stencil", sans-serif;
+            font-optical-sizing: auto;
         }
         #opt img:hover{
             cursor: pointer;
@@ -81,6 +83,26 @@
         #opt_go:hover{
             cursor: pointer;
         }
+        #log{
+            position: fixed;
+            visibility: hidden;
+            width: 25%;
+            height: auto;
+            padding: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            justify-content: center;  
+            align-items: center;      
+            border-radius: 10px;
+            flex-direction: column;
+            
+            background: rgba(37, 129, 0, 0.356);
+            text-align: center;
+        }
+        
     </style>
 
 
@@ -105,14 +127,20 @@
     </div>
     <div id="opt">
         <div>
-            <div>test</div>
-            <div>test</div>
-            <div>test</div>
+            <span onclick="log()">test</span>
+            <span></span>
+            <span></span>
         </div>
 
         <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
     </div>
-    
+    <div id="log">
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+    </div>
 </body>
 <script>
     let opt_vis = 0;
@@ -127,6 +155,9 @@
             document.getElementById("opt_go").style.visibility="visible"
             opt_vis=0;
         }
+    }
+    function log(){
+        document.getElementById("log").style.visibility="visible"
     }
 </script>
 </html>
