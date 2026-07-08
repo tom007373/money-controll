@@ -92,7 +92,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
+            font-size: 30px;
             display: flex;
             justify-content: center;  
             align-items: center;      
@@ -101,8 +101,17 @@
             
             background: rgba(37, 129, 0, 0.356);
             text-align: center;
+            font-family: "Saira Stencil", sans-serif;
+            font-optical-sizing: auto;
         }
-        
+        #log input{
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #c2ffaf;
+            font-family: "Saira Stencil", sans-serif;
+            font-optical-sizing: auto;
+        }
     </style>
 
 
@@ -126,20 +135,20 @@
         </div>
     </div>
     <div id="opt">
-        <div>
+        <div style="display: flex; flex-direction: column;">
             <span onclick="log()">test</span>
-            <span></span>
+            <span onclick="rej()">test</span>
             <span></span>
         </div>
 
         <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
     </div>
     <div id="log">
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
+        <span>Zaloguj się</span>
+        <span><input type="email" id="email" placeholder="podaj e mail"></span>
+        <span><input type="password" id="haslo" placeholder="podaj hasło"></span>
+        <span><label><input type="checkbox" onclick="pokazHaslo()">Pokaż hasło</label></span>
+        <span><button>Zaloguj się</button></span>
     </div>
 </body>
 <script>
@@ -159,5 +168,14 @@
     function log(){
         document.getElementById("log").style.visibility="visible"
     }
+    function pokazHaslo() {
+    const haslo = document.getElementById("haslo");
+
+    if (haslo.type === "password") {
+        haslo.type = "text";
+    } else {
+        haslo.type = "password";
+    }
+}
 </script>
 </html>
