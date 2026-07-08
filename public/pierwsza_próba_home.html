@@ -165,7 +165,7 @@
             color: black;
         }
     </style>
-    
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -186,32 +186,36 @@
     </div>
     <div id="opt">
         <div style="display: flex; flex-direction: column;">
-            <span onclick="log()">test</span>
-            <span onclick="rej()">test</span>
+            <span onclick="log()">Zaloguj</span>
+            <span onclick="rej()">Zarejestruj</span>
             <span></span>
         </div>
 
         <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
     </div>
-    <div id="log">
-        <span>Zaloguj się</span>
-        <span><input type="email" id="email" placeholder="podaj e mail"></span>
-        <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło"></span>
-        <span><label><input type="checkbox" onclick="pokazHaslo_log()">Pokaż hasło</label></span>
-        <span><button>Zaloguj się</button></span>
-    </div>
-    <div id="rej">
-        <span>Zarejestruj się</span>
-        <span><input type="text" placeholder="Imię"></span>
-        <span><input type="text" placeholder="Nazwisko"></span>
-        <span><input type="email"placeholder="e-mail"></span>
-        <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"></span>
-        <span><label><input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło</label></span>
-        <span><input type="password" placeholder="Powtóż hasło" id="haslo_vis_rej_2"></span>
-        <span><label><input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło</label></span>
-        <span><button>Zarejestruj się</button></span>
-        
-    </div>
+    <form>
+        <div id="log">
+            <span>Zaloguj się</span>
+            <span><input type="email" id="email" placeholder="podaj e mail"required></span>
+            <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
+            <span><label><input type="checkbox" onclick="pokazHaslo_log()" >Pokaż hasło</label></span>
+            <span><button type="submit" onclick="go_log()">Zaloguj się</button></span>
+        </div>
+    </form>
+    <form onsubmit="return go_rej()">
+        <div id="rej">
+            <span>Zarejestruj się</span>
+            <span><input type="text" placeholder="Imię"required></span>
+            <span><input type="text" placeholder="Nazwisko"required></span>
+            <span><input type="email"placeholder="e-mail"required></span>
+            <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"></span>
+            <span><label><input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło</label></span>
+            <span><input type="password" placeholder="Powtóż hasło" id="haslo_vis_rej_2"></span>
+            <span><label><input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło</label></span>
+            <span><button type="submit" >Zarejestruj się</button></span>
+            
+        </div>
+    </form>
 </body>
 <script>
     let opt_vis = 0;
@@ -283,6 +287,16 @@
             haslo.type = "text";
         } else {
             haslo.type = "password";
+        }
+    }
+    function go_rej(){
+        let h1 = document.getElementById("haslo_vis_rej_1").value;
+        let h2 = document.getElementById("haslo_vis_rej_2").value;
+        if( h1==h2){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 </script>
