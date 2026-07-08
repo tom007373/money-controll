@@ -76,6 +76,7 @@
             border: 1px solid rgb(0, 158, 0);
             font-family: "Saira Stencil", sans-serif;
             font-optical-sizing: auto;
+            user-select: none;
         }
         #opt img:hover{
             cursor: pointer;
@@ -208,8 +209,9 @@
         <span><input type="email"placeholder="e-mail"></span>
         <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"></span>
         <span><label><input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło</label></span>
-        <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_2"></span>
+        <span><input type="password" placeholder="Powtóż hasło" id="haslo_vis_rej_2"></span>
         <span><label><input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło</label></span>
+        <span><button>Zarejestruj się</button></span>
         
     </div>
 </body>
@@ -229,52 +231,60 @@
             opt_vis=0;
         }
     }
-    function log(){
-        if (log_vis==0){
-            document.getElementById("log").style.visibility="visible"
-            log_vis=1;
-        }
-        else{
-            document.getElementById("log").style.visibility="hidden"
-            log_vis=0;
-        }
-    }
-    function rej(){
-        
-        if (rej_vis==0){
-            document.getElementById("rej").style.visibility="visible"
-            rej_vis=1;
-        }
-        else{
-            document.getElementById("rej").style.visibility="hidden"
-            rej_vis=0;
-        }
-    }
-    function pokazHaslo_log() {
-        const haslo = document.getElementById("haslo");
+    function log() {
 
-        if (haslo_vis_log.type === "password") {
-            haslo_vis_log.type = "text";
+        
+        document.getElementById("rej").style.visibility = "hidden";
+        rej_vis = 0;
+
+        if (log_vis == 0) {
+            document.getElementById("log").style.visibility = "visible";
+            log_vis = 1;
         } else {
-            haslo_vis_log.type = "password";
+            document.getElementById("log").style.visibility = "hidden";
+            log_vis = 0;
+        }
+    }
+    
+    function rej() {
+
+        
+        document.getElementById("log").style.visibility = "hidden";
+        log_vis = 0;
+
+        if (rej_vis == 0) {
+            document.getElementById("rej").style.visibility = "visible";
+            rej_vis = 1;
+        } else {
+            document.getElementById("rej").style.visibility = "hidden";
+            rej_vis = 0;
+        }
+    }
+        function pokazHaslo_log() {
+        const haslo = document.getElementById("haslo_vis_log");
+
+        if (haslo.type === "password") {
+            haslo.type = "text";
+        } else {
+            haslo.type = "password";
         }
     }
     function pokazHaslo_rej_1() {
-        const haslo = document.getElementById("haslo");
+        const haslo = document.getElementById("haslo_vis_rej_1");
 
-        if (haslo_vis_log.type === "password") {
-            haslo_vis_log.type = "text";
+        if (haslo.type === "password") {
+            haslo.type = "text";
         } else {
-            haslo_vis_log.type = "password";
+            haslo.type = "password";
         }
     }
     function pokazHaslo_rej_2() {
-        const haslo = document.getElementById("haslo");
+        const haslo = document.getElementById("haslo_vis_rej_2");
 
-        if (haslo_vis_log.type === "password") {
-            haslo_vis_log.type = "text";
+        if (haslo.type === "password") {
+            haslo.type = "text";
         } else {
-            haslo_vis_log.type = "password";
+            haslo.type = "password";
         }
     }
 </script>
