@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #a3daa6;
+            font-size:20px;
+        }
+        .cont{
+            border: 7px solid rgba(46, 46, 46, 0.37);
+            border-radius: 10px;
+            width: 100%;
+            height: 97vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+        header{
+            display: flex;
+            margin: 0 auto;
+            border: 7px solid rgba(46, 46, 46, 0.37);
+            border-radius: 30px;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #005300,#008a00, #005300);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 60px;
+            font-weight: bold;
+            font-family: "Saira Stencil", sans-serif;
+            font-optical-sizing: auto;
+        }
+         .box_col{   
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .box_row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+        }
+        .kont span{
+            position: absolute;
+            visibility: visible;
+        }
+        .box_row span {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #opt{
+            position: fixed;
+            top: 0;
+            right: -300px;      
+            width: 300px;
+            
+            background: rgba(37, 129, 0, 0.356);
+            
+            transition: right 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border: 1px solid rgb(0, 158, 0);
+        }
+        #opt img:hover{
+            cursor: pointer;
+        }
+        #opt_go:hover{
+            cursor: pointer;
+        }
+    </style>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cont">
+        <div class=" box_row">
+            <header>
+                Zapanuj nad swoimi finansami
+            </header>
+            <span ><svg viewBox="0 0 24 24" width="100" height="100" fill="none"  onclick="opt()" id="opt_go">
+  <path d="M4 6H15M4 12H15M4 18H15" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
+        </div>
+        <div class="box_col">
+
+        </div>
+    </div>
+    <div id="opt">
+        <div>
+            <div>test</div>
+            <div>test</div>
+            <div>test</div>
+        </div>
+
+        <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
+    </div>
+    
+</body>
+<script>
+    let opt_vis = 0;
+    function opt(){
+        if (opt_vis==0){
+            document.getElementById("opt").style.right="0px";
+            document.getElementById("opt_go").style.visibility="hidden"
+            opt_vis=1;
+        }
+        else{
+            document.getElementById("opt").style.right="-300px";
+            document.getElementById("opt_go").style.visibility="visible"
+            opt_vis=0;
+        }
+    }
+</script>
+</html>
