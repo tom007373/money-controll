@@ -164,6 +164,9 @@
         #rej input::placeholder{
             color: black;
         }
+        .cpoint:hover{
+            cursor: pointer;
+        }
     </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,6 +203,8 @@
             <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
             <span><label><input type="checkbox" onclick="pokazHaslo_log()" >Pokaż hasło</label></span>
             <span><button type="submit" onclick="go_log()">Zaloguj się</button></span>
+            <span style="font-size: 20px;" onclick="rej()" class="cpoint">Nie masz konta? Zarejsetruj się</span>
+            
         </div>
     </form>
     <form onsubmit="return go_rej()">
@@ -213,7 +218,7 @@
             <span><input type="password" placeholder="Powtóż hasło" id="haslo_vis_rej_2"></span>
             <span><label><input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło</label></span>
             <span><button type="submit" >Zarejestruj się</button></span>
-            
+            <span style="font-size: 20px;" onclick="log()" class="cpoint">Masz już konto? Zaloguj się</span>
         </div>
     </form>
 </body>
