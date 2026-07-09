@@ -196,15 +196,14 @@
 
         <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
     </div>
-    <form>
+    <form onsubmit="return go_log()">
         <div id="log">
             <span>Zaloguj się</span>
             <span><input type="email" id="email" placeholder="podaj e mail"required></span>
             <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
             <span><label><input type="checkbox" onclick="pokazHaslo_log()" >Pokaż hasło</label></span>
-            <span><button type="submit" onclick="go_log()">Zaloguj się</button></span>
+            <span><button type="submit">Zaloguj się</button></span>
             <span style="font-size: 20px;" onclick="rej()" class="cpoint">Nie masz konta? Zarejsetruj się</span>
-            
         </div>
     </form>
     <form onsubmit="return go_rej()">
@@ -213,9 +212,9 @@
             <span><input type="text" placeholder="Imię"required></span>
             <span><input type="text" placeholder="Nazwisko"required></span>
             <span><input type="email"placeholder="e-mail"required></span>
-            <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"></span>
+            <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"required></span>
             <span><label><input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło</label></span>
-            <span><input type="password" placeholder="Powtóż hasło" id="haslo_vis_rej_2"></span>
+            <span><input type="password" placeholder="Powtóż hasło" id="haslo_vis_rej_2" required></span>
             <span><label><input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło</label></span>
             <span><button type="submit" >Zarejestruj się</button></span>
             <span style="font-size: 20px;" onclick="log()" class="cpoint">Masz już konto? Zaloguj się</span>
@@ -235,6 +234,10 @@
         else{
             document.getElementById("opt").style.right="-300px";
             document.getElementById("opt_go").style.visibility="visible"
+            document.getElementById("log").style.visibility = "hidden";
+            document.getElementById("rej").style.visibility = "hidden";
+            rej_vis = 0;
+            log_vis = 0;
             opt_vis=0;
         }
     }
@@ -298,11 +301,43 @@
         let h1 = document.getElementById("haslo_vis_rej_1").value;
         let h2 = document.getElementById("haslo_vis_rej_2").value;
         if( h1==h2){
-            return true;
+            return sprawdzHaslo(h1)
         }
         else{
             return false;
+            alert("hasła muszą być takie same")
         }
+    
+    
     }
+    function sprawdzHaslo(haslo) {
+
+    if (haslo.length < 8) {
+        alert("Hasło musi mieć co najmniej 8 znaków.");
+        return false;
+    }
+
+    if (!/[A-Z]/.test(haslo)) {
+        alert("Hasło musi zawierać dużą literę.");
+        return false;
+    }
+
+    if (!/[a-z]/.test(haslo)) {
+        alert("Hasło musi zawierać małą literę.");
+        return false;
+    }
+
+    if (!/[0-9]/.test(haslo)) {
+        alert("Hasło musi zawierać cyfrę.");
+        return false;
+    }
+
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(haslo)) {
+        alert("Hasło musi zawierać znak specjalny.");
+        return false;
+    }
+
+    return true;
+}
 </script>
 </html>
