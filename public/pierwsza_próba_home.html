@@ -34,7 +34,7 @@
         <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
     </div>
     <form id="rejForm">
-        <div id="log">
+        <form onsubmit="return go_log()">
             <span>Zaloguj się</span>
             <span><input type="email" id="email" placeholder="podaj e mail"required></span>
             <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
@@ -43,7 +43,7 @@
             <span style="font-size: 20px;" onclick="rej()" class="cpoint">Nie masz konta? Zarejsetruj się</span>
         </div>
     </form>
-    <form onsubmit="return go_rej()">
+    <form id="rejForm">
         <div id="rej">
             <span>Zarejestruj się</span>
             <span><input type="text" placeholder="Imię" id="imie" required></span>
