@@ -3,175 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        body {
-            background-color: #a3daa6;
-            font-size:20px;
-        }
-        .cont{
-            border: 7px solid rgba(46, 46, 46, 0.37);
-            border-radius: 10px;
-            width: 100%;
-            height: 97vh;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            box-sizing: border-box;
-        }
-        header{
-            display: flex;
-            margin: 0 auto;
-            border: 7px solid rgba(46, 46, 46, 0.37);
-            border-radius: 30px;
-            width: auto;
-            height: auto;
-            padding: 10px;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #005300,#008a00, #005300);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 60px;
-            font-weight: bold;
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-        }
-         .box_col{   
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-        }
-        .box_row {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            position: relative;
-        }
-        .kont span{
-            position: absolute;
-            visibility: visible;
-        }
-        .box_row span {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        #opt{
-            position: fixed;
-            top: 0;
-            right: -300px;      
-            width: 300px;
-            top: 14px;
-            background: rgba(37, 129, 0, 0.356);
-            
-            transition: right 0.3s ease;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            border: 1px solid rgb(0, 158, 0);
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-            user-select: none;
-        }
-        #opt img:hover{
-            cursor: pointer;
-        }
-        #opt_go:hover{
-            cursor: pointer;
-        }
-        #log{
-            position: fixed;
-            visibility: hidden;
-            width: 25%;
-            height: auto;
-            padding: 10px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 30px;
-            display: flex;
-            justify-content: center;  
-            align-items: center;      
-            border-radius: 10px;
-            flex-direction: column;
-            
-            background: rgb(94, 167, 68);
-            text-align: center;
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-        }
-        #log input{
-            font-size: 20px;
-            padding: 5px;
-            border-radius: 10px;
-            background-color: #c2ffaf;
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-        }
-        #log button{
-            font-size: 20px;
-            padding: 5px;
-            border-radius: 10px;
-            background-color: #c2ffaf;
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-        }
-        #log input::placeholder{
-            color: black;
-        }
-        #rej{
-            position: fixed;
-            visibility: hidden;
-            width: 25%;
-            height: auto;
-            padding: 10px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 30px;
-            display: flex;
-            justify-content: center;  
-            align-items: center;      
-            border-radius: 10px;
-            flex-direction: column;
-            
-            background: rgb(94, 167, 68);
-            text-align: center;
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-        }
-        #rej input{
-            font-size: 20px;
-            padding: 5px;
-            border-radius: 10px;
-            background-color: #c2ffaf;
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-        }
-        #rej button{
-            font-size: 20px;
-            padding: 5px;
-            border-radius: 10px;
-            background-color: #c2ffaf;
-            font-family: "Saira Stencil", sans-serif;
-            font-optical-sizing: auto;
-        }
-        #rej input::placeholder{
-            color: black;
-        }
-        .cpoint:hover{
-            cursor: pointer;
-        }
-    </style>
+    
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styl1.css">
 </head>
 <body>
     <div class="cont">
@@ -196,7 +33,7 @@
 
         <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
     </div>
-    <form onsubmit="return go_log()">
+    <form id="rejForm">
         <div id="log">
             <span>Zaloguj się</span>
             <span><input type="email" id="email" placeholder="podaj e mail"required></span>
@@ -297,24 +134,47 @@
             haslo.type = "password";
         }
     }
-    async function go_rej(){
-        let imie = document.getElementById("imie").value;
-        let nazwisko = document.getElementById("nazwisko").value;
-        let email = document.getElementById("email_rej").value;
-        let h1 = document.getElementById("haslo_vis_rej_1").value;
-        let h2 = document.getElementById("haslo_vis_rej_2").value;
-        if( h1==h2){
-            return sprawdzHaslo(h1)
-        }
-        else{
-            alert("hasła muszą być takie same")
-            return false;
-            
-        }
-    
-        
+    async function go_rej(event){
+
+    event.preventDefault();
+
+    let imie = document.getElementById("imie").value;
+    let nazwisko = document.getElementById("nazwisko").value;
+    let email = document.getElementById("mail").value;
+    let h1 = document.getElementById("haslo_vis_rej_1").value;
+    let h2 = document.getElementById("haslo_vis_rej_2").value;
+
+    if(h1 != h2){
+        alert("Hasła muszą być takie same");
+        return;
     }
-    async function sprawdzHaslo(haslo) {
+
+    if(!sprawdzHaslo(h1)){
+        return;
+    }
+
+    const odpowiedz = await fetch("/register",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            imie,
+            nazwisko,
+            email,
+            haslo:h1
+        })
+    });
+
+    const wynik = await odpowiedz.json();
+
+    if (odpowiedz.ok) {
+        alert(wynik.message);
+    } else {
+        alert("Błąd: " + wynik.message);
+    }
+}
+    function sprawdzHaslo(haslo) {
 
     if (haslo.length < 8) {
         alert("Hasło musi mieć co najmniej 8 znaków.");
@@ -342,22 +202,7 @@
     }
 
     return true;
-        const odpowiedz = await fetch("/register", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            imie,
-            nazwisko,
-            email,
-            haslo: h1
-        })
-    });
-
-    const wynik = await odpowiedz.json();
-
-    alert(wynik.message);
 }
+document.getElementById("rejForm").addEventListener("submit", go_rej);
 </script>
 </html>

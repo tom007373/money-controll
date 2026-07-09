@@ -1,0 +1,163 @@
+    body {
+        background-color: #a3daa6;
+        font-size:20px;
+    }
+    .cont{
+        border: 7px solid rgba(46, 46, 46, 0.37);
+        border-radius: 10px;
+        width: 100%;
+        height: 97vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+    header{
+        display: flex;
+        margin: 0 auto;
+        border: 7px solid rgba(46, 46, 46, 0.37);
+        border-radius: 30px;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #005300,#008a00, #005300);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 60px;
+        font-weight: bold;
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+    }
+     .box_col{   
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .box_row {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+    .kont span{
+        position: absolute;
+        visibility: visible;
+    }
+    .box_row span {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #opt{
+        position: fixed;
+        top: 0;
+        right: -300px;      
+        width: 300px;
+        top: 14px;
+        background: rgba(37, 129, 0, 0.356);
+        
+        transition: right 0.3s ease;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border: 1px solid rgb(0, 158, 0);
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+        user-select: none;
+    }
+    #opt img:hover{
+        cursor: pointer;
+    }
+    #opt_go:hover{
+        cursor: pointer;
+    }
+    #log{
+        position: fixed;
+        visibility: hidden;
+        width: 25%;
+        height: auto;
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        display: flex;
+        justify-content: center;  
+        align-items: center;      
+        border-radius: 10px;
+        flex-direction: column;
+        
+        background: rgb(94, 167, 68);
+        text-align: center;
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+    }
+    #log input{
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #c2ffaf;
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+    }
+    #log button{
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #c2ffaf;
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+    }
+    #log input::placeholder{
+        color: black;
+    }
+    #rej{
+        position: fixed;
+        visibility: hidden;
+        width: 25%;
+        height: auto;
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        display: flex;
+        justify-content: center;  
+        align-items: center;      
+        border-radius: 10px;
+        flex-direction: column;
+        
+        background: rgb(94, 167, 68);
+        text-align: center;
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+    }
+    #rej input{
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #c2ffaf;
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+    }
+    #rej button{
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #c2ffaf;
+        font-family: "Saira Stencil", sans-serif;
+        font-optical-sizing: auto;
+    }
+    #rej input::placeholder{
+        color: black;
+    }
+    .cpoint:hover{
+        cursor: pointer;
+    }
