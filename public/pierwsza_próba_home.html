@@ -312,24 +312,9 @@
             
         }
     
-        const odpowiedz = await fetch("/register", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        imie,
-        nazwisko,
-        email,
-        haslo: h1
-    })
-});
-
-const wynik = await odpowiedz.json();
-
-alert(wynik.message);
+        
     }
-    function sprawdzHaslo(haslo) {
+    async function sprawdzHaslo(haslo) {
 
     if (haslo.length < 8) {
         alert("Hasło musi mieć co najmniej 8 znaków.");
@@ -357,6 +342,22 @@ alert(wynik.message);
     }
 
     return true;
+        const odpowiedz = await fetch("/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            imie,
+            nazwisko,
+            email,
+            haslo: h1
+        })
+    });
+
+    const wynik = await odpowiedz.json();
+
+    alert(wynik.message);
 }
 </script>
 </html>
