@@ -209,9 +209,9 @@
     <form onsubmit="return go_rej()">
         <div id="rej">
             <span>Zarejestruj się</span>
-            <span><input type="text" placeholder="Imię"required></span>
-            <span><input type="text" placeholder="Nazwisko"required></span>
-            <span><input type="email"placeholder="e-mail"required></span>
+            <span><input type="text" placeholder="Imię" id="imie" required></span>
+            <span><input type="text" placeholder="Nazwisko" id="nazwisko" required></span>
+            <span><input type="email"placeholder="e-mail" id="mail"required></span>
             <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"required></span>
             <span><label><input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło</label></span>
             <span><input type="password" placeholder="Powtórz hasło" id="haslo_vis_rej_2" required></span>
@@ -297,18 +297,37 @@
             haslo.type = "password";
         }
     }
-    function go_rej(){
+    async function go_rej(){
+        let imie = document.getElementById("imie").value;
+        let nazwisko = document.getElementById("nazwisko").value;
+        let email = document.getElementById("email_rej").value;
         let h1 = document.getElementById("haslo_vis_rej_1").value;
         let h2 = document.getElementById("haslo_vis_rej_2").value;
         if( h1==h2){
             return sprawdzHaslo(h1)
         }
         else{
-            return false;
             alert("hasła muszą być takie same")
+            return false;
+            
         }
     
-    
+        const odpowiedz = await fetch("/register", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        imie,
+        nazwisko,
+        email,
+        haslo: h1
+    })
+});
+
+const wynik = await odpowiedz.json();
+
+alert(wynik.message);
     }
     function sprawdzHaslo(haslo) {
 

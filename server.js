@@ -12,7 +12,20 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "pierwsza_próba_home.html"));
 });
+app.post("/register", async (req, res) => {
 
+    const { imie, nazwisko, email, haslo } = req.body;
+
+    console.log(imie);
+    console.log(nazwisko);
+    console.log(email);
+    console.log(haslo);
+
+    res.json({
+        message: "Dane odebrane!"
+    });
+
+});
 const PORT = process.env.PORT || 3000;
 
 async function initDB() {
