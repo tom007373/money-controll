@@ -33,8 +33,8 @@
 
         <img src="rysunek-1.svg" width="40" alt="" onclick="opt()" >
     </div>
-    <form id="log">
-        <form onsubmit="return go_log()">
+    <form id="logForm">
+        <div id="log">
             <span>Zaloguj się</span>
             <span><input type="email" id="email" placeholder="podaj e mail"required></span>
             <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
@@ -135,7 +135,9 @@
         }
     }
     async function go_rej(event){
-
+    
+    alert("dziala")
+    
     event.preventDefault();
 
     let imie = document.getElementById("imie").value;
