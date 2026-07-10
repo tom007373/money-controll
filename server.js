@@ -13,6 +13,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "pierwsza_próba_home.html"));
 });
 app.post("/register", async (req, res) => {
+    console.log("Rejestracja!");
+    console.log(req.body);
 
     const { imie, nazwisko, email, haslo } = req.body;
 
