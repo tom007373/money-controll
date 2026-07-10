@@ -13,19 +13,28 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "pierwsza_próba_home.html"));
 });
 app.post("/register", async (req, res) => {
-    console.log("Rejestracja!");
-    console.log(req.body);
 
     const { imie, nazwisko, email, haslo } = req.body;
 
-    console.log(imie);
-    console.log(nazwisko);
-    console.log(email);
-    console.log(haslo);
+    try {
 
-    res.json({
-        message: "Dane odebrane!"
-    });
+        await pool.query(
+            `INSERT INTO users (imie, nazwisko, email, haslo)
+             VALUES ($1, $2, $3, $4)`,
+            [imie, nazwisko, email, haslo]
+        );
+
+        res.json({
+            message: "Konto zostało utworzone!"
+        });
+
+    } catch (err) {
+        console.error(err);
+
+        res.status(500).json({
+            message: "Błąd podczas zapisu do bazy."
+        });
+    }
 
 });
 const PORT = process.env.PORT || 3000;
