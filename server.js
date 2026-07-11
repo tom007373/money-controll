@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const pool = require("./db");
 const express = require("express");
 const path = require("path");
@@ -27,10 +28,12 @@ app.post("/register", async (req, res) => {
                 message: "Konto z takim adresem e-mail już istnieje."
             });
         } 
+        const zahashowaneHaslo = await bcrypt.hash(haslo, 10);
+
         await pool.query(
-            `INSERT INTO users (imie, nazwisko, email, haslo)
-             VALUES ($1, $2, $3, $4)`,
-            [imie, nazwisko, email, haslo]
+            `INSERT INTO users(imie,nazwisko,email,haslo)
+            VALUES($1,$2,$3,$4)`,
+            [imie, nazwisko, email, zahashowaneHaslo]
         );
 
         res.json({
