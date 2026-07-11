@@ -17,7 +17,16 @@ app.post("/register", async (req, res) => {
     const { imie, nazwisko, email, haslo } = req.body;
 
     try {
+        const istnieje = await pool.query(
+            "SELECT id FROM users WHERE email = $1",
+            [email]
+        );
 
+        if (istnieje.rows.length > 0) {
+            return res.status(400).json({
+                message: "Konto z takim adresem e-mail już istnieje."
+            });
+        } 
         await pool.query(
             `INSERT INTO users (imie, nazwisko, email, haslo)
              VALUES ($1, $2, $3, $4)`,
@@ -28,9 +37,9 @@ app.post("/register", async (req, res) => {
             message: "Konto zostało utworzone!"
         });
 
-    } catch (err) {
+        } 
+    catch (err) {
         console.error(err);
-
         res.status(500).json({
             message: "Błąd podczas zapisu do bazy."
         });
