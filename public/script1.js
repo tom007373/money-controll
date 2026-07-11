@@ -110,7 +110,7 @@ let opt_vis = 0;
     const wynik = await odpowiedz.json();
 
     if (odpowiedz.ok) {
-        alert(wynik.message);
+        
     } else {
         alert("Błąd: " + wynik.message);
     }
