@@ -102,7 +102,8 @@ let opt_vis = 0;
             imie,
             nazwisko,
             email,
-            haslo:h1
+            haslo:h1,
+            haslo_powt:h2
         })
     });
 

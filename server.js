@@ -5,6 +5,31 @@ const path = require("path");
 
 const app = express();
 
+function sprawdzHaslo(haslo) {
+
+    if (haslo.length < 8) {
+        return "Hasło musi mieć co najmniej 8 znaków.";
+    }
+
+    if (!/[A-Z]/.test(haslo)) {
+        return "Hasło musi zawierać dużą literę.";
+    }
+
+    if (!/[a-z]/.test(haslo)) {
+        return "Hasło musi zawierać małą literę.";
+    }
+
+    if (!/[0-9]/.test(haslo)) {
+        return "Hasło musi zawierać cyfrę.";
+    }
+
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(haslo)) {
+        return "Hasło musi zawierać znak specjalny.";
+    }
+
+    return null;
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -17,7 +42,15 @@ app.post("/register", async (req, res) => {
 
     const { imie, nazwisko, email, haslo } = req.body;
 
-    if (!imie || !nazwisko || !email || !haslo) {
+    const bladHasla = sprawdzHaslo(haslo);
+
+    if (bladHasla) {
+        return res.status(400).json({
+            message: bladHasla
+        });
+    }
+
+    if (!imie || !nazwisko || !email || !haslo || !haslo_powt) {
     return res.status(400).json({
         message: "Uzupełnij wszystkie pola."
     });
