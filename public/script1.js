@@ -110,6 +110,9 @@ let opt_vis = 0;
 
     if (odpowiedz.ok) {
         alert(wynik.message);
+        document.getElementById("rejForm").reset();
+        document.getElementById("rej").style.visibility = "hidden";
+        rej_vis = 0;
     } else {
         alert("Błąd: " + wynik.message);
     }

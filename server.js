@@ -17,6 +17,12 @@ app.post("/register", async (req, res) => {
 
     const { imie, nazwisko, email, haslo } = req.body;
 
+    if (!imie || !nazwisko || !email || !haslo) {
+    return res.status(400).json({
+        message: "Uzupełnij wszystkie pola."
+    });
+}
+    
     try {
         const istnieje = await pool.query(
             "SELECT id FROM users WHERE email = $1",
