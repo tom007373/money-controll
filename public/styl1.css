@@ -162,7 +162,7 @@
         display: flex;
         justify-content: center;  
         align-items: center;      
-        border-radius: 10px;
+        border-radius: 20px;
         flex-direction: column;
         
         background: #3cff35;
@@ -202,7 +202,7 @@
         display: flex;
         justify-content: center;  
         align-items: center;      
-        border-radius: 10px;
+        border-radius: 20px;
         flex-direction: column;
         
         background: #3cff35;
