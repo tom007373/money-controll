@@ -114,6 +114,22 @@ app.post("/login", async (req, res) => {
     res.json({
         message: "Użytkownik znaleziony."
     });
+
+    const uzytkownik = wynik.rows[0];
+
+    const poprawneHaslo = await bcrypt.compare(
+        haslo,
+        uzytkownik.haslo
+    );
+
+    if (!poprawneHaslo) {
+        return res.status(401).json({
+            message: "Nieprawidłowe hasło."
+        });
+    }
+    res.json({
+        message: `Witaj ${uzytkownik.imie}!`
+    });
 });
 
 const PORT = process.env.PORT || 3000;
