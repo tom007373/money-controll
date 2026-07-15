@@ -88,6 +88,16 @@ app.post("/register", async (req, res) => {
     }
 
 });
+app.post("/login", async (req, res) => {
+    app.post("/login", async (req, res) => {
+
+    const { email, haslo } = req.body;
+
+    console.log(email);
+    console.log(haslo);
+
+    });
+});
 const PORT = process.env.PORT || 3000;
 
 async function initDB() {

@@ -159,3 +159,25 @@ function cont(){
     }
 }
 document.getElementById("rejForm").addEventListener("submit", go_rej);
+async function go_log(event){
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const haslo = document.getElementById("haslo_vis_log").value;
+
+    const odpowiedz = await fetch("/login",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            email,
+            haslo
+        })
+    });
+
+    const wynik = await odpowiedz.json();
+    alert(wynik.message);
+}
+
+document.getElementById("logForm").addEventListener("submit", go_log);
