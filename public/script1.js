@@ -1,6 +1,7 @@
 let opt_vis = 0;
     let log_vis = 0;
     let rej_vis = 0;
+    let kont_vis = 0;
     function opt(){
         if (opt_vis==0){
             document.getElementById("opt").style.right="0px";
@@ -146,5 +147,15 @@ let opt_vis = 0;
     }
 
     return true;
+}
+function cont(){
+    if(kont_vis == 0){
+        document.getElementById("kont").style.visibility="visible";
+        kont_vis = 1;
+    }
+    else{
+        document.getElementById("kont").style.visibility="hidden";
+        kont_vis = 0; 
+    }
 }
 document.getElementById("rejForm").addEventListener("submit", go_rej);
