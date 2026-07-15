@@ -95,9 +95,6 @@ app.post("/login", async (req, res) => {
 
     const { email, haslo } = req.body;
 
-    console.log(email);
-    console.log(haslo);
-
     const wynik = await pool.query(
         "SELECT * FROM users WHERE email = $1",
         [email]
@@ -108,12 +105,6 @@ app.post("/login", async (req, res) => {
             message: "Nie znaleziono użytkownika."
         });
     }
-
-    console.log(wynik.rows[0]);
-
-    res.json({
-        message: "Użytkownik znaleziony."
-    });
 
     const uzytkownik = wynik.rows[0];
 
@@ -127,6 +118,7 @@ app.post("/login", async (req, res) => {
             message: "Nieprawidłowe hasło."
         });
     }
+
     res.json({
         message: `Witaj ${uzytkownik.imie}!`
     });
