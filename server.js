@@ -97,10 +97,22 @@ app.post("/login", async (req, res) => {
     console.log(email);
     console.log(haslo);
 
-    res.json({
-        message: "Działa"
-    });
+    const { email, haslo } = req.body;
 
+    const wynik = await pool.query(
+        "SELECT * FROM users WHERE email = $1",
+        [email]
+    );
+    if (wynik.rows.length === 0) {
+        return res.status(404).json({
+            message: "Nie znaleziono użytkownika."
+        });
+    } 
+    console.log(wynik.rows[0]);
+
+    res.json({
+        message: "Użytkownik znaleziony."
+});
 });
 const PORT = process.env.PORT || 3000;
 
