@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 });
 app.post("/register", async (req, res) => {
 
-    const { imie, nazwisko, email, haslo } = req.body;
+    const { imie, nazwisko, email, haslo, haslo_powt } = req.body;
 
     const bladHasla = sprawdzHaslo(haslo);
 

@@ -177,7 +177,15 @@ async function go_log(event){
     });
 
     const wynik = await odpowiedz.json();
-    alert(wynik.message);
+
+    if (odpowiedz.ok) {
+        alert(wynik.message);
+        document.getElementById("logForm").reset();
+        document.getElementById("log").style.visibility = "hidden";
+        log_vis = 0;
+    } else {
+        alert("Błąd: " + wynik.message);
+    }
 }
 
 document.getElementById("logForm").addEventListener("submit", go_log);
