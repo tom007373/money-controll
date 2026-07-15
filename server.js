@@ -89,14 +89,18 @@ app.post("/register", async (req, res) => {
 
 });
 app.post("/login", async (req, res) => {
-    app.post("/login", async (req, res) => {
+
+    console.log("Ktoś próbuje się zalogować");
 
     const { email, haslo } = req.body;
 
     console.log(email);
     console.log(haslo);
 
+    res.json({
+        message: "Działa"
     });
+
 });
 const PORT = process.env.PORT || 3000;
 
