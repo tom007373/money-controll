@@ -91,37 +91,19 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async (req, res) => {
 
-    console.log("Ktoś próbuje się zalogować");
+    console.log("Hasło wpisane:", haslo);
 
-    const { email, haslo } = req.body;
+const uzytkownik = wynik.rows[0];
 
-    const wynik = await pool.query(
-        "SELECT * FROM users WHERE email = $1",
-        [email]
-    );
+console.log("Hash z bazy:", uzytkownik.haslo);
 
-    if (wynik.rows.length === 0) {
-        return res.status(404).json({
-            message: "Nie znaleziono użytkownika."
-        });
-    }
+const poprawneHaslo = await bcrypt.compare(
+    haslo,
+    uzytkownik.haslo
+);
 
-    const uzytkownik = wynik.rows[0];
+console.log("Wynik compare:", poprawneHaslo);
 
-    const poprawneHaslo = await bcrypt.compare(
-        haslo,
-        uzytkownik.haslo
-    );
-
-    if (!poprawneHaslo) {
-        return res.status(401).json({
-            message: "Nieprawidłowe hasło."
-        });
-    }
-
-    res.json({
-        message: `Witaj ${uzytkownik.imie}!`
-    });
 });
 
 const PORT = process.env.PORT || 3000;
