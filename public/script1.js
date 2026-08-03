@@ -180,10 +180,12 @@ async function go_log(event){
 
     if (odpowiedz.ok) {
         alert(wynik.message);
+        window.location.href = "/panel.html";
         document.getElementById("logForm").reset();
         document.getElementById("log").style.visibility = "hidden";
         log_vis = 0;
-    } else {
+    } 
+    else {
         alert("Błąd: " + wynik.message);
     }
 }
