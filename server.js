@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const pool = require("./db");
 const express = require("express");
 const path = require("path");
-
+const session = require("express-session");
 const app = express();
 
 function sprawdzHaslo(haslo) {
@@ -32,6 +32,15 @@ function sprawdzHaslo(haslo) {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: "bardzo_tajny_klucz",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 // 24 godziny
+    }
+}));
 
 app.use(express.static(path.join(__dirname, "public")));
 
