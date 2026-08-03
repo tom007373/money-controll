@@ -180,7 +180,7 @@ async function go_log(event){
 
     if (odpowiedz.ok) {
         alert(wynik.message);
-        window.location.href = "/panel.html";
+        window.location.href = "/pierwsza_próba_fstrona.html";
         document.getElementById("logForm").reset();
         document.getElementById("log").style.visibility = "hidden";
         log_vis = 0;
