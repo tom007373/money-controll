@@ -138,10 +138,12 @@ app.post("/login", async (req, res) => {
         email: uzytkownik.email
     };
 
+    console.log(req.session);
+    
     return res.json({
         message: `Witaj ${uzytkownik.imie}!`
     });
-    console.log(req.session);
+    
 });
 
 const PORT = process.env.PORT || 3000;
