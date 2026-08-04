@@ -161,6 +161,26 @@ app.get("/check-login", (req, res) => {
 
 });
 
+app.post("/logout", (req, res) => {
+
+    req.session.destroy((err) => {
+
+        if (err) {
+            return res.status(500).json({
+                message: "Nie udało się wylogować."
+            });
+        }
+
+        res.clearCookie("connect.sid");
+
+        return res.json({
+            message: "Wylogowano."
+        });
+
+    });
+
+});
+
 const PORT = process.env.PORT || 3000;
 
 async function initDB() {

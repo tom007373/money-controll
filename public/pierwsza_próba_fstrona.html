@@ -160,14 +160,18 @@
     visibility: visible;
     opacity: 1;
 }
-#powitanie{
+.powitanie{
     border: 7px solid rgba(46, 46, 46, 0.37);
     border-radius: 30px;
     margin-left: auto;
     padding: 10px;
     margin-top: 10px;
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
+
     </style>
 </head>
 <body>
@@ -269,7 +273,10 @@
                     <span id="">x</span>
                 </div>
             </div>
-            <div id="powitanie"> witaj </div>
+            <div class="powitanie"> 
+                <span id="powitanie">Witaj</span> 
+                <span> <button onclick="wyloguj()">WYLOGUJ</button></span>
+            </div>
         </div>
         
             <div class="tab_row">
@@ -303,6 +310,16 @@
     </script>
 </body>
 <script>
+    async function wyloguj() {
 
+        const odpowiedz = await fetch("/logout", {
+            method: "POST"
+        });
+
+        if (odpowiedz.ok) {
+            window.location.href = "/";
+        }
+
+    }
 </script>
 </html>
