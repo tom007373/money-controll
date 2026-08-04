@@ -160,6 +160,14 @@
     visibility: visible;
     opacity: 1;
 }
+#powitanie{
+    border: 7px solid rgba(46, 46, 46, 0.37);
+    border-radius: 30px;
+    margin-left: auto;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
     </style>
 </head>
 <body>
@@ -261,6 +269,7 @@
                     <span id="">x</span>
                 </div>
             </div>
+            <div id="powitanie"> witaj </div>
         </div>
         
             <div class="tab_row">
@@ -282,6 +291,9 @@
             }
 
             const dane = await odpowiedz.json();
+
+            document.getElementById("powitanie").textContent =
+                `Witaj ${dane.user.imie}!`;
 
             console.log(dane);
 
