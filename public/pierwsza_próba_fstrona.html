@@ -178,20 +178,66 @@
     <div class="cont">
         <div class="box_row">
             <div class="box">
-                <div class="wykr">
-                    <span>0 zł</span>
-                </div>
-            </div>
-            <div class="box_col">
-                <div class="box" style="display: flex; flex-direction: column;">
-                    <input type="number" name="" id=""  min="0" placeholder="Stan konta">
+                <div class="box_col">
+                    <div class="wykr">
+                        <span>0 zł</span>
+                    </div>
                     <br>
-                    <button onclick="">zatwierdz</button>
-                </div>
-                <div class="box">
                     <div style="text-align: center;">Bilans</div>
                     <div style="text-align: center; border-radius: 10px; padding: 10px; font-size: 20px; background-color: lightgreen; border: 1px solid black;">&nbsp;</div>
                 </div>
+            </div>
+            
+            <div class="box_col">
+                <div class="box" style="display: flex; flex-direction: column;">
+                    <form id="transakcjaForm">
+                        <select id="typ" required>
+                            <option value="">Wybierz typ</option>
+                            <option value="przychód">Przychód</option>
+                            <option value="wydatek">Wydatek</option>
+                        </select>
+
+                        <br><br>
+
+                        <select id="kategoria" required>
+                            <option value="">Wybierz kategorię</option>
+
+                            <option>Praca</option>
+                            <option>Darowizny</option>
+                            <option>Inwestycje</option>
+
+                            <option>Zakupy nieuniknione</option>
+                            <option>Zakupy dodatkowe</option>
+                            <option>Wydatki obowiązkowe</option>
+                            <option>Wydatki dodatkowe</option>
+                            <option>Niespodziewane wydatki</option>
+                        </select>
+
+                        <br><br>
+
+                        <input type="text" id="nazwa" placeholder="Opis transakcji" required>
+
+                        <br><br>
+
+                        <input
+                            type="number"
+                            id="kwota"
+                            step="0.01"
+                            min="0.01"
+                            placeholder="Kwota"
+                            required>
+
+                        <br><br>
+
+                        <input type="date" id="data" required
+                        >
+
+                        <br><br>
+
+                        <button type="submit">Dodaj transakcję</button>
+                    </form>
+                </div>
+                
                 
             </div>
             
