@@ -139,11 +139,26 @@ app.post("/login", async (req, res) => {
     };
 
     console.log(req.session);
-    
+
     return res.json({
         message: `Witaj ${uzytkownik.imie}!`
     });
     
+});
+
+app.get("/check-login", (req, res) => {
+
+    if (req.session.user) {
+        return res.json({
+            zalogowany: true,
+            user: req.session.user
+        });
+    }
+
+    return res.status(401).json({
+        zalogowany: false
+    });
+
 });
 
 const PORT = process.env.PORT || 3000;

@@ -271,7 +271,24 @@
     </div>
 
     
-    
+    <script>
+        async function sprawdzLogowanie() {
+
+            const odpowiedz = await fetch("/check-login");
+
+            if (!odpowiedz.ok) {
+                window.location.href = "/";
+                return;
+            }
+
+            const dane = await odpowiedz.json();
+
+            console.log(dane);
+
+        }
+
+        sprawdzLogowanie();
+    </script>
 </body>
 <script>
 
