@@ -132,9 +132,16 @@ app.post("/login", async (req, res) => {
         });
     }
 
-    res.json({
+    req.session.user = {
+        id: uzytkownik.id,
+        imie: uzytkownik.imie,
+        email: uzytkownik.email
+    };
+
+    return res.json({
         message: `Witaj ${uzytkownik.imie}!`
     });
+    console.log(req.session);
 });
 
 const PORT = process.env.PORT || 3000;
