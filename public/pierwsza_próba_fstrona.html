@@ -3,244 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        body {
-    background-color: #111111;
-    color: #eeeeee;
-    font-size: 20px;
-}
-
-input::placeholder {
-    font-size: 20px;
-    color: #aaaaaa;
-}
-
-.cont {
-    border: 7px solid rgba(255, 255, 255, 0.20);
-    border-radius: 10px;
-    width: 100%;
-    height: 97vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-}
-
-.wykr {
-    width: 200px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-
-    background: conic-gradient(
-        #777777 0%,
-        #777777 100%
-    );
-}
-
-.wykr::before {
-    content: "";
-    position: absolute;
-
-    width: 150px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-
-    background: #181818;
-}
-
-.wykr span {
-    position: relative;
-    z-index: 1;
-    font-size: 28px;
-    color: #ffffff;
-}
-
-.box {
-    display: inline-block;
-
-    border: 7px solid rgba(255, 255, 255, 0.20);
-    border-radius: 10px;
-
-    width: auto;
-    height: auto;
-
-    margin: 10px;
-    padding: 10px;
-    flex-wrap: wrap;
-
-    background: #1a1a1a;
-}
-
-input {
-    padding: 7px;
-    border-radius: 5px;
-
-    background-color: #252525;
-    color: #ffffff;
-
-    border: 1px solid #666666;
-    outline: none;
-}
-
-input:focus {
-    border-color: #aaaaaa;
-}
-
-button {
-    border-radius: 6px;
-    font-size: 20px;
-
-    background-color: #252525;
-    color: #ffffff;
-
-    border: 1px solid #666666;
-    padding: 7px 12px;
-
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover {
-    background-color: #3a3a3a;
-    border-color: #aaaaaa;
-}
-
-.box_col {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.box_row {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.pods {
-    display: flex;
-    flex-direction: row;
-
-    border: 7px solid rgba(255, 255, 255, 0.20);
-    border-radius: 10px;
-
-    width: auto;
-    height: auto;
-
-    margin: 10px;
-    padding: 10px;
-
-    background: #1a1a1a;
-}
-
-.kat {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    margin-right: 10px;
-    text-align: right;
-    min-width: 227px;
-}
-
-.wyn {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    margin-left: 10px;
-}
-
-.tab {
-    display: flex;
-
-    border: 7px solid rgba(255, 255, 255, 0.20);
-    border-radius: 10px;
-
-    flex: 1;
-    margin: 10px;
-    padding: 10px;
-
-    background: #1a1a1a;
-}
-
-.tab_row {
-    display: flex;
-    gap: 20px;
-    flex: 1;
-    width: 100%;
-}
-
-.tooltip {
-    position: relative;
-    cursor: help;
-}
-
-.tooltip-text {
-    visibility: hidden;
-    opacity: 0;
-
-    position: absolute;
-    top: 50%;
-    left: 110%;
-    transform: translateY(-50%);
-
-    width: 180px;
-    padding: 8px;
-
-    background: #252525;
-    color: #ffffff;
-
-    border: 1px solid #666666;
-    border-radius: 6px;
-
-    text-align: center;
-
-    transition: opacity 0.2s;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-.powitanie {
-    border: 7px solid rgba(255, 255, 255, 0.20);
-    border-radius: 30px;
-
-    margin-left: auto;
-    padding: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    background: #1a1a1a;
-}
-select{
-    padding: 7px;
-    border-radius: 5px;
-
-    background-color: #252525;
-    color: #ffffff;
-
-    border: 1px solid #666666;
-    outline: none;
-}
-select:focus{
-    border-color: #aaaaaa;
-}
-    </style>
+    <link rel="stylesheet" href="styl2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="cont">
@@ -389,6 +155,29 @@ select:focus{
             </div>
             <div class="powitanie"> 
                 <span id="powitanie">Witaj</span> 
+                <span>
+                    <button class="button" onclick="sett()">
+  <svg
+    class="svg-icon"
+    fill="none"
+    height="20"
+    viewBox="0 0 20 20"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g stroke="white" stroke-linecap="round" stroke-width="1.5">
+      <circle cx="10" cy="10" r="2.5"></circle>
+      <path
+        clip-rule="evenodd"
+        d="m8.39079 2.80235c.53842-1.51424 2.67991-1.51424 3.21831-.00001.3392.95358 1.4284 1.40477 2.3425.97027 1.4514-.68995 2.9657.82427 2.2758 2.27575-.4345.91407.0166 2.00334.9702 2.34248 1.5143.53842 1.5143 2.67996 0 3.21836-.9536.3391-1.4047 1.4284-.9702 2.3425.6899 1.4514-.8244 2.9656-2.2758 2.2757-.9141-.4345-2.0033.0167-2.3425.9703-.5384 1.5142-2.67989 1.5142-3.21831 0-.33914-.9536-1.4284-1.4048-2.34247-.9703-1.45148.6899-2.96571-.8243-2.27575-2.2757.43449-.9141-.01669-2.0034-.97028-2.3425-1.51422-.5384-1.51422-2.67994.00001-3.21836.95358-.33914 1.40476-1.42841.97027-2.34248-.68996-1.45148.82427-2.9657 2.27575-2.27575.91407.4345 2.00333-.01669 2.34247-.97026z"
+        fill-rule="evenodd"
+      ></path>
+    </g>
+  </svg>
+  <span class="lable" style="font-size: 10px;">ustawienia</span>
+</button>
+    
+                </span>
                 <span> <button onclick="wyloguj()">WYLOGUJ</button></span>
             </div>
         </div>
@@ -400,6 +189,26 @@ select:focus{
     
     </div>
 
+    <div id="sett">
+        <div class="glass-radio-group">
+
+            <input type="radio" name="plan" id="glass-basic" checked />
+            <label for="glass-basic">Basic</label>
+
+            <input type="radio" name="plan" id="glass-silver" />
+            <label for="glass-silver">Silver</label>
+
+            <input type="radio" name="plan" id="glass-gold" />
+            <label for="glass-gold">Gold</label>
+
+            <input type="radio" name="plan" id="glass-platinum" />
+            <label for="glass-platinum">Platinum</label>
+
+            <div class="glass-glider"></div>
+
+        </div>
+
+    </div>
     
     <script>
         async function sprawdzLogowanie() {
@@ -424,6 +233,7 @@ select:focus{
     </script>
 </body>
 <script>
+    let sett_vis = 0;
     async function wyloguj() {
 
         const odpowiedz = await fetch("/logout", {
@@ -463,5 +273,14 @@ select:focus{
         .getElementById("transakcjaForm")
         .addEventListener("submit", dodajTransakcje);
 
+    function sett(){
+        if (sett_vis == 0) {
+            document.getElementById("sett").style.visibility = "visible";
+            sett_vis = 1;
+        } else {
+            document.getElementById("sett").style.visibility = "hidden";
+            sett_vis = 0;
+        }
+    }
 </script>
 </html>

@@ -1,0 +1,414 @@
+body {
+    background-color: #111111;
+    color: #aaaaaa;
+    font-size: 20px;
+    
+}
+
+input::placeholder {
+    font-size: 20px;
+    color: #aaaaaa;
+}
+
+.cont {
+    border: 7px solid rgba(255, 255, 255, 0.20);
+    border-radius: 10px;
+    width: 100%;
+    height: 97vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: "Saira Stencil", sans-serif;
+    font-optical-sizing: auto;
+    text-align: center;
+}
+.cont input, button, select{
+    font-weight: bold;
+    font-family: "Saira Stencil", sans-serif;
+    font-optical-sizing: auto;
+    text-align: center;
+}
+.wykr {
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    background: conic-gradient(
+        #777777 0%,
+        #777777 100%
+    );
+    
+}
+
+.wykr::before {
+    content: "";
+    position: absolute;
+
+    width: 150px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background: #181818;
+}
+
+.wykr span {
+    position: relative;
+    z-index: 1;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.box {
+    display: inline-block;
+
+    border: 7px solid rgba(255, 255, 255, 0.20);
+    border-radius: 10px;
+
+    width: auto;
+    height: auto;
+
+    margin: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+
+    background: #1a1a1a;
+}
+
+input {
+    padding: 7px;
+    border-radius: 5px;
+
+    background-color: #252525;
+    color: #ffffff;
+
+    border: 1px solid #666666;
+    outline: none;
+}
+
+input:focus {
+    border-color: #aaaaaa;
+}
+
+button {
+    border-radius: 6px;
+    font-size: 20px;
+
+    background-color: #252525;
+    color: #aaaaaa;
+
+    border: 1px solid #666666;
+    padding: 7px 12px;
+
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+
+button:hover {
+    background-color: #3a3a3a;
+    border-color: #aaaaaa;
+}
+
+.box_col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.box_row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.pods {
+    display: flex;
+    flex-direction: row;
+
+    border: 7px solid rgba(255, 255, 255, 0.20);
+    border-radius: 10px;
+
+    width: auto;
+    height: auto;
+
+    margin: 10px;
+    padding: 10px;
+
+    background: #1a1a1a;
+}
+
+.kat {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-right: 10px;
+    text-align: right;
+    min-width: 227px;
+}
+
+.wyn {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-left: 10px;
+}
+
+.tab {
+    display: flex;
+
+    border: 7px solid rgba(255, 255, 255, 0.20);
+    border-radius: 10px;
+
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+
+    background: #1a1a1a;
+}
+
+.tab_row {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    width: 100%;
+}
+
+.tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+
+    width: 180px;
+    padding: 8px;
+
+    background: #252525;
+    color: #ffffff;
+
+    border: 1px solid #666666;
+    border-radius: 6px;
+
+    text-align: center;
+
+    transition: opacity 0.2s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.powitanie {
+    border: 7px solid rgba(255, 255, 255, 0.20);
+    border-radius: 30px;
+
+    margin-left: auto;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background: #1a1a1a;
+}
+select{
+    padding: 7px;
+    border-radius: 5px;
+
+    background-color: #252525;
+    color: #aaaaaa;
+
+    border: 1px solid #666666;
+    outline: none;
+}
+select:focus{
+    border-color: #aaaaaa;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  height: 36px;
+  width: 120px;
+  border: none;
+  background: black;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.lable {
+  line-height: 20px;
+  font-size: 17px;
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background: grey;
+}
+
+.button:hover .svg-icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#sett {
+    position: fixed;
+    visibility: hidden;
+    min-height: 25%;
+    height: auto;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    flex-direction: column;
+    border: 5px #ffffff solid;
+
+    background: #181818;
+    color: #ffffff;
+
+    text-align: center;
+    font-family: "Saira Stencil", sans-serif;
+    font-optical-sizing: auto;
+}
+.glass-radio-group {
+  --bg: rgba(255, 255, 255, 0.06);
+  --text: #e5e5e5;
+
+  display: flex;
+  position: relative;
+  background: var(--bg);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    inset 1px 1px 4px rgba(255, 255, 255, 0.2),
+    inset -1px -1px 6px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: fit-content;
+}
+
+.glass-radio-group input {
+  display: none;
+}
+
+.glass-radio-group label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  font-size: 14px;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text);
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease-in-out;
+}
+
+.glass-radio-group label:hover {
+  color: white;
+}
+
+.glass-radio-group input:checked + label {
+  color: #fff;
+}
+
+.glass-glider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(100% / 4);
+  border-radius: 1rem;
+  z-index: 1;
+  transition:
+    transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56),
+    background 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out;
+}
+
+#glass-basic:checked ~ .glass-glider {
+    transform: translateX(0%);
+
+    background: linear-gradient(
+        135deg,
+        #000000,
+        
+    );
+
+    box-shadow:
+        0 0 18px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.4) inset;
+}
+
+/* Silver */
+#glass-silver:checked ~ .glass-glider {
+  transform: translateX(100%);
+  background: linear-gradient(135deg, #c0c0c055, #e0e0e0);
+  box-shadow:
+    0 0 18px rgba(192, 192, 192, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.4) inset;
+}
+
+/* Gold */
+#glass-gold:checked ~ .glass-glider {
+  transform: translateX(200%);
+  background: linear-gradient(135deg, #ffd70055, #ffcc00);
+  box-shadow:
+    0 0 18px rgba(255, 215, 0, 0.5),
+    0 0 10px rgba(255, 235, 150, 0.4) inset;
+}
+
+/* Platinum */
+#glass-platinum:checked ~ .glass-glider {
+  transform: translateX(300%);
+  background: linear-gradient(135deg, #d0e7ff55, #a0d8ff);
+  box-shadow:
+    0 0 18px rgba(160, 216, 255, 0.5),
+    0 0 10px rgba(200, 240, 255, 0.4) inset;
+}
