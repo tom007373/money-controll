@@ -148,7 +148,7 @@ let opt_vis = 0;
 
     return true;
 }
-function cont(){
+function med(){
     if(kont_vis == 0){
         document.getElementById("kont").style.visibility="visible";
         kont_vis = 1;
