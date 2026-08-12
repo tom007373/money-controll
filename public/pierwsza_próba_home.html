@@ -89,7 +89,11 @@
             <span>Zaloguj się <img src="rysunek-1.svg" width="40" alt="" onclick="log()" ></span>
             <span><input type="email" id="email" placeholder="podaj e mail"required></span>
             <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
-            <span><label><input type="checkbox" onclick="pokazHaslo_log()" >Pokaż hasło</label></span>
+            
+            <span><label class="container" >
+                <input type="checkbox" onclick="pokazHaslo_log()">pokaż hasło
+                <div class="checkmark"></div>
+            </label></span>
             <span><button type="submit">Zaloguj się</button></span>
             <span style="font-size: 20px;" onclick="rej()" class="cpoint">Nie masz konta? Zarejsetruj się</span>
         </div>
@@ -101,6 +105,10 @@
             <span><input type="text" placeholder="Nazwisko" id="nazwisko" required></span>
             <span><input type="email"placeholder="e-mail" id="mail"required></span>
             <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"required></span>
+            <label class="container">
+                <input type="checkbox" >
+                <div class="checkmark"></div>
+            </label>
             <span><label><input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło</label></span>
             <span><input type="password" placeholder="Powtórz hasło" id="haslo_vis_rej_2" required></span>
             <span><label><input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło</label></span>
