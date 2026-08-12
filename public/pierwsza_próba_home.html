@@ -91,7 +91,7 @@
             <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
             
             <span><label class="container" >
-                <input type="checkbox" onclick="pokazHaslo_log()">pokaż hasło
+                <input type="checkbox" onclick="pokazHaslo_log()">Pokaż hasło
                 <div class="checkmark"></div>
             </label></span>
             <span><button type="submit">Zaloguj się</button></span>
@@ -105,13 +105,17 @@
             <span><input type="text" placeholder="Nazwisko" id="nazwisko" required></span>
             <span><input type="email"placeholder="e-mail" id="mail"required></span>
             <span><input type="password" placeholder="Hasło" id="haslo_vis_rej_1"required></span>
-            <label class="container">
-                <input type="checkbox" >
+            
+            <span><label><label class="container">
+                <input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło
                 <div class="checkmark"></div>
-            </label>
-            <span><label><input type="checkbox" onclick="pokazHaslo_rej_1()">Pokaż hasło</label></span>
+            </label></span>
+
             <span><input type="password" placeholder="Powtórz hasło" id="haslo_vis_rej_2" required></span>
-            <span><label><input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło</label></span>
+            <span><label class="container">
+                <input type="checkbox" onclick="pokazHaslo_rej_2()">Pokaż hasło
+                <div class="checkmark"></div>
+            </label></span>
             <span><button type="submit" >Zarejestruj się</button></span>
             <span style="font-size: 20px;" onclick="log()" class="cpoint">Masz już konto? Zaloguj się</span>
         </div>
