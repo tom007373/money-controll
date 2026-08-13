@@ -146,6 +146,52 @@ app.post("/login", async (req, res) => {
     
 });
 
+    app.post("/transactions", async (req, res) => {
+
+        if (!req.session.user) {
+            return res.status(401).json({
+                message: "Musisz być zalogowany."
+            });
+        }
+
+        const { typ, kategoria, nazwa, kwota, data } = req.body;
+
+        if (!typ || !kategoria || !nazwa || !kwota || !data) {
+            return res.status(400).json({
+                message: "Uzupełnij wszystkie pola."
+            });
+        }
+
+        try {
+
+            await pool.query(
+                `INSERT INTO transactions
+                (user_id, typ, kategoria, nazwa, kwota, data)
+                VALUES ($1, $2, $3, $4, $5, $6)`,
+                [
+                    req.session.user.id,
+                    typ,
+                    kategoria,
+                    nazwa,
+                    kwota,
+                    data
+                ]
+            );
+
+            res.json({
+                message: "Transakcja została dodana."
+            });
+
+        } catch (err) {
+
+            console.error(err);
+
+            res.status(500).json({
+                message: "Błąd podczas zapisywania transakcji."
+            });
+        }
+    });
+
 app.get("/check-login", (req, res) => {
 
     if (req.session.user) {
@@ -223,7 +269,7 @@ async function initDB() {
             `);
 
             console.log("Tabela transactions gotowa.");
-            
+
     } catch(err){
         console.error(err);
     }
