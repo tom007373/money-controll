@@ -23,15 +23,15 @@
             </div>
             
             <div class="box_col">
-                <div class="box" style="display: flex; flex-direction: column;">
-                    <form id="transakcjaForm">
+                <div class="box" >
+                    <form id="transakcjaForm" style="display: flex; flex-direction: column;" >
                         <select id="typ" required>
                             <option value="">Wybierz typ</option>
                             <option value="przychód">Przychód</option>
                             <option value="wydatek">Wydatek</option>
                         </select>
 
-                        <br><br>
+                        
 
                         <select id="kategoria" required>
                             <option value="">Wybierz kategorię</option>
@@ -47,11 +47,11 @@
                             <option>Niespodziewane wydatki</option>
                         </select>
 
-                        <br><br>
+                        
 
                         <input type="text" id="nazwa" placeholder="Opis transakcji" required>
 
-                        <br><br>
+                        
 
                         <input
                             type="number"
@@ -61,18 +61,14 @@
                             placeholder="Kwota"
                             required>
 
-                        <br><br>
+                        
+                        <input type="date" id="data" required>
 
-                        <input type="date" id="data" required
-                        >
-
-                        <br><br>
+                        
 
                         <button type="submit">Dodaj transakcję</button>
                     </form>
                 </div>
-                
-                
             </div>
             
             <div class="pods" >
@@ -207,9 +203,18 @@
             <div class="glass-glider"></div>
 
         </div>
-
-    </div>
-    
+        <span>Podziel się opinią:</span>
+        <div class="rating">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text"></label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text"></label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text"></label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text"></label>
+            <input checked="" type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text"></label>
     <script>
         async function sprawdzLogowanie() {
 

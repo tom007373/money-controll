@@ -77,7 +77,7 @@ input::placeholder {
     width: auto;
     height: auto;
 
-    margin: 10px;
+    margin: 0px;
     padding: 10px;
     flex-wrap: wrap;
 
@@ -411,4 +411,64 @@ select:focus{
   box-shadow:
     0 0 18px rgba(160, 216, 255, 0.5),
     0 0 10px rgba(200, 240, 255, 0.4) inset;
+}
+#transakcjaForm input,
+#transakcjaForm select,
+#transakcjaForm button {
+    width: 250px;
+    height: 45px;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 8px;
+
+    font-size: 18px;
+    border-radius: 8px;
+    margin-bottom: 7px;
+}
+.rating input[type="radio"]{
+    visibility: hidden;
+}
+.rating:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 30px;
+  color: #666;
+}
+
+.rating:not(:checked) > label:before {
+  content: "★";
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}
+#aktualnaOpinia {
+    font-size: 30px;
+}
+
+#aktualnaOpinia .star {
+    color: #666666;
+}
+
+#aktualnaOpinia .star.active {
+    color: #ff9e0b;
 }
