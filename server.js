@@ -148,6 +148,9 @@ app.post("/login", async (req, res) => {
 
     app.post("/transactions", async (req, res) => {
 
+        console.log("DODAWANIE TRANSAKCJI");
+
+
         if (!req.session.user) {
             return res.status(401).json({
                 message: "Musisz być zalogowany."
@@ -155,6 +158,16 @@ app.post("/login", async (req, res) => {
         }
 
         const { typ, kategoria, nazwa, kwota, data } = req.body;
+
+        console.log("Dane transakcji:", {
+            typ,
+            kategoria,
+            nazwa,
+            kwota,
+            data
+        });
+
+        console.log("ID użytkownika:", req.session.user.id);
 
         if (!typ || !kategoria || !nazwa || !kwota || !data) {
             return res.status(400).json({
