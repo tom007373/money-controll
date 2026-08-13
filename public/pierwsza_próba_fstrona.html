@@ -260,32 +260,28 @@
     }
     async function dodajTransakcje(event){
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const typ = document.getElementById("typ").value;
-    const kategoria = document.getElementById("kategoria").value;
-    const nazwa = document.getElementById("nazwa").value;
-    const kwota = document.getElementById("kwota").value;
-    const data = document.getElementById("data").value;
+        const typ = document.getElementById("typ").value;
+        const kategoria = document.getElementById("kategoria").value;
+        const nazwa = document.getElementById("nazwa").value;
+        const kwota = document.getElementById("kwota").value;
+        const data = document.getElementById("data").value;
 
-    console.log({
+        console.log({
             typ,
             kategoria,
             nazwa,
             kwota,
             data
         });
-
     }
 
-    
     document.getElementById("data").valueAsDate = new Date();
 
-    
     document
         .getElementById("transakcjaForm")
         .addEventListener("submit", dodajTransakcje);
-
     function sett(){
         if (sett_vis == 0) {
             document.getElementById("sett").style.visibility = "visible";

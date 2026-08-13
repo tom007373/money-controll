@@ -128,6 +128,7 @@ button:hover {
 .box_row {
     display: flex;
     gap: 20px;
+    margin: 10px;
     align-items: flex-start;
     width: 100%;
     flex-wrap: wrap;

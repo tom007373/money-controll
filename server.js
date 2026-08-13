@@ -204,27 +204,26 @@ async function initDB() {
         `);
 
         console.log("Tabela users gotowa.");
+
             await pool.query(`
                 CREATE TABLE IF NOT EXISTS transactions(
                     id SERIAL PRIMARY KEY,
-
                     user_id INTEGER NOT NULL,
-
                     typ VARCHAR(20) NOT NULL,
-
                     kategoria VARCHAR(100) NOT NULL,
-
                     nazwa VARCHAR(255) NOT NULL,
-
                     kwota DECIMAL(10,2) NOT NULL,
-
                     data DATE NOT NULL,
-
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-                    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+                    FOREIGN KEY(user_id)
+                        REFERENCES users(id)
+                        ON DELETE CASCADE
                 );
             `);
+
+            console.log("Tabela transactions gotowa.");
+            
     } catch(err){
         console.error(err);
     }
