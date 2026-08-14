@@ -1,0 +1,227 @@
+<div class="futuristic-input">
+  <div class="futuristic-input-space">
+    <div class="futuristic-input-space-2"></div>
+    <div class="triangle-input-up"></div>
+    <div class="triangle-input-bar2"></div>
+    <div class="triangle-input-left"></div>
+    <div class="futuristic-input-space-2"></div>
+    <div class="triangle-input-right2"></div>
+    <div class="triangle-input-bar3"></div>
+  </div>
+  <div class="futuristic-input-space">
+    <div class="triangle-input-up"></div>
+    <div class="triangle-input-bar"></div>
+  </div>
+  <div class="futuristic-input-space">
+    <div class="triangle-input-bar"></div>
+    <input type="text" name="text" class="input" />
+    <p class="futuristic-input-enter">ENTER</p>
+    <p class="futuristic-input-name">NAME</p>
+  </div>
+  <div class="futuristic-input-space">
+    <div class="triangle-input-bar"></div>
+  </div>
+  <div class="futuristic-input-space">
+    <div class="triangle-input-bar"></div>
+    <div class="triangle-input-down"></div>
+  </div>
+  <div class="futuristic-input-space2">
+    <div class="triangle-input-bar3"></div>
+    <div class="triangle-input-left2"></div>
+    <div class="futuristic-input-space-2"></div>
+    <div class="triangle-input-right"></div>
+    <div class="triangle-input-bar2"></div>
+    <div class="triangle-input-down"></div>
+    <div class="futuristic-input-space-2"></div>
+  </div>
+</div>
+
+
+.futuristic-input {
+  width: 15em;
+  height: 6em;
+  position: relative;
+  overflow: hidden;
+  --firstcolor: #171033;
+  --secondcolor: #171033;
+  transition: all 0.25s ease-in-out;
+  padding: 0em;
+  margin: 0em;
+  animation: changeborder 2.5s infinite linear;
+}
+
+@keyframes changeborder {
+  0% {
+    border: 0.1em solid #515267;
+    border-left: 0.1em solid white;
+  }
+  25% {
+    border: 0.1em solid #515267;
+    border-top: 0.1em solid white;
+  }
+  50% {
+    border: 0.1em solid #515267;
+    border-right: 0.1em solid white;
+  }
+  70% {
+    border: 0.1em solid #515267;
+    border-bottom: 0.1em solid white;
+  }
+  100% {
+    border: 0.1em solid #515267;
+    border-left: 0.1em solid white;
+  }
+}
+
+.futuristic-input:hover {
+  transform: scale(1.1);
+  animation: spawn-light 1s;
+  animation-iteration-count: 1s;
+}
+
+@keyframes spawn-light {
+  0% {
+    background-color: white;
+    box-shadow: 0em 0em 5em white;
+  }
+  50% {
+    box-shadow: 0em 0em 0em white;
+  }
+  100% {
+    background-color: rgb(255, 255, 255, 0);
+  }
+}
+.input {
+  width: 80%;
+  height: 1.75em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 0.15em solid white;
+  background-color: var(--firstcolor);
+  font-weight: bold;
+  padding-left: 0.25em;
+  color: white;
+  outline: none;
+  font-weight: 100;
+}
+.triangle-input-up {
+  width: 0em;
+  height: 0em;
+  border-left: 1em solid transparent;
+  border-bottom: 1em solid var(--secondcolor);
+}
+.triangle-input-left {
+  width: 0em;
+  height: 0em;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid var(--firstcolor);
+}
+.triangle-input-left2 {
+  width: 0em;
+  height: 0em;
+  border-right: 1em solid transparent;
+  border-bottom: 1em solid white;
+}
+.triangle-input-down {
+  width: 0em;
+  height: 0em;
+  border-bottom: 1em solid transparent;
+  border-left: 1em solid var(--firstcolor);
+}
+.triangle-input-right {
+  width: 0em;
+  height: 0em;
+  border-left: 1em solid transparent;
+  border-top: 1em solid var(--secondcolor);
+}
+.triangle-input-right2 {
+  width: 0em;
+  height: 0em;
+  border-left: 1em solid transparent;
+  border-top: 1em solid white;
+}
+.futuristic-input-space {
+  width: 100%;
+  height: 1em;
+  display: flex;
+}
+
+.futuristic-input-space2 {
+  width: 100%;
+  height: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+.triangle-input-bar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--firstcolor);
+}
+.triangle-input-bar2 {
+  width: 5em;
+  height: 100%;
+  background-color: var(--firstcolor);
+}
+.triangle-input-bar3 {
+  width: 3em;
+  height: 100%;
+  background-color: white;
+}
+.futuristic-input-space-2 {
+  width: 2em;
+  height: 1em;
+  display: flex;
+}
+
+.futuristic-input-enter {
+  color: white;
+  top: -0.35em;
+  position: absolute;
+  left: 3.2em;
+  font-weight: bold;
+  animation: color-change 2.5s infinite linear;
+  -webkit-text-stroke: 0.01em white;
+  font-size: 1.25em;
+  text-shadow: 1em 0em 1em white;
+}
+
+.futuristic-input-name {
+  color: white;
+  bottom: -0.4em;
+  position: absolute;
+  right: 3.25em;
+  font-weight: bold;
+  animation: color-change 2.5s infinite linear 0.5s;
+  -webkit-text-stroke: 0.01em white;
+  font-size: 1.25em;
+  text-shadow: -2em 0em 1em white;
+}
+
+@keyframes color-change {
+  0% {
+    color: white;
+  }
+  25% {
+    color: white;
+  }
+  30% {
+    color: transparent;
+  }
+  35% {
+    color: white;
+  }
+  40% {
+    color: transparent;
+  }
+  45% {
+    color: white;
+  }
+  100% {
+    color: white;
+  }
+}

@@ -1,0 +1,414 @@
+<div class="balance-card">
+    <div class="balance-glow"></div>
+
+    <div class="balance-content">
+
+        <div class="balance-header">
+            <div class="balance-title-wrapper">
+                <div class="balance-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 12m0 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"></path>
+                        <path d="M9 8m0 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"></path>
+                        <path d="M15 4m0 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"></path>
+                        <path d="M4 20l14 0"></path>
+                    </svg>
+                </div>
+
+                <div>
+                    <p class="balance-title">Monthly Balance</p>
+                    <p class="balance-subtitle">Updated just now</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="balance-stats">
+
+            <div class="balance-stat revenue">
+                <p class="stat-label">Revenue</p>
+                <p class="stat-value">$51,274</p>
+                <p class="stat-change positive">+8.5%</p>
+            </div>
+
+            <div class="balance-stat costs">
+                <p class="stat-label">Costs</p>
+                <p class="stat-value">$12,818</p>
+                <p class="stat-change negative">+2.1%</p>
+            </div>
+
+        </div>
+
+        <div class="balance-chart">
+            <svg
+                viewBox="0 0 300 100"
+                preserveAspectRatio="none"
+            >
+                <defs>
+                    <linearGradient
+                        id="aurora-gradient-v2"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1"
+                    >
+                        <stop
+                            offset="0%"
+                            stop-color="#a3e635"
+                            stop-opacity="0.2"
+                        ></stop>
+
+                        <stop
+                            offset="100%"
+                            stop-color="#a3e635"
+                            stop-opacity="0"
+                        ></stop>
+                    </linearGradient>
+                </defs>
+
+                <path
+                    d="M0,65 C50,20 80,80 150,70 S250,50 300,85"
+                    fill="none"
+                    stroke="#a3e635"
+                    stroke-width="2"
+                ></path>
+
+                <path
+                    d="M0,100 L0,65 C50,20 80,80 150,70 S250,50 300,85 L300,100 Z"
+                    fill="url(#aurora-gradient-v2)"
+                ></path>
+            </svg>
+
+            <div class="chart-point">
+                <div class="chart-dot"></div>
+                <div class="chart-pulse"></div>
+            </div>
+        </div>
+
+        <div class="balance-footer">
+            <button class="report-button">
+                View Full Report
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+
+.balance-card {
+    --card-bg: #0a0a0a;
+    --card-border: #262626;
+    --text-main: #f5f5f5;
+    --text-secondary: #737373;
+    --accent: #a3e635;
+    --accent-soft: rgba(163, 230, 53, 0.10);
+    --accent-glow: rgba(163, 230, 53, 0.25);
+    --danger: #f87171;
+
+    position: relative;
+
+    width: 320px;
+    overflow: hidden;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+
+    font-family: Arial, sans-serif;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45);
+
+    color: var(--text-main);
+}
+
+.balance-glow {
+    position: absolute;
+
+    width: 256px;
+    height: 256px;
+
+    top: -128px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(163, 230, 53, 0.10);
+
+    filter: blur(48px);
+
+    transition: background 0.7s ease;
+
+    pointer-events: none;
+}
+
+.balance-card:hover .balance-glow {
+    background: rgba(163, 230, 53, 0.15);
+}
+
+.balance-content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.balance-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #262626;
+}
+
+.balance-title-wrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.balance-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(163, 230, 53, 0.10);
+
+    color: var(--accent);
+
+    flex-shrink: 0;
+}
+
+.balance-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.balance-title {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #e5e5e5;
+}
+
+.balance-subtitle {
+    margin: 3px 0 0;
+
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.balance-stats {
+    display: flex;
+}
+
+.balance-stat {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.balance-stat.revenue {
+    padding-right: 24px;
+
+    border-right: 1px solid #262626;
+}
+
+.balance-stat.costs {
+    padding-left: 24px;
+}
+
+.stat-label {
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    margin: 4px 0 0;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #f5f5f5;
+}
+
+.stat-change {
+    margin: 4px 0 0;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-change.positive {
+    color: var(--accent);
+}
+
+.stat-change.negative {
+    color: var(--danger);
+}
+
+
+/* =========================
+   CHART
+========================= */
+
+.balance-chart {
+    position: relative;
+
+    width: 100%;
+    height: 96px;
+}
+
+.balance-chart svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+.chart-point {
+    position: absolute;
+
+    right: 0;
+    top: 85%;
+
+    width: 12px;
+    height: 12px;
+
+    transform: translate(50%, -50%);
+}
+
+.chart-dot {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 10px rgba(163, 230, 53, 0.5);
+}
+
+.chart-pulse {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background: rgba(163, 230, 53, 0.25);
+
+    animation: chartPulse 1.5s infinite;
+}
+
+@keyframes chartPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.balance-footer {
+    padding-top: 20px;
+
+    border-top: 1px solid #262626;
+}
+
+.report-button {
+    width: 100%;
+
+    padding: 10px 16px;
+
+    border: 1px solid rgba(163, 230, 53, 0.5);
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--accent);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.report-button:hover {
+    background: var(--accent);
+
+    color: #0a0a0a;
+
+    box-shadow:
+        0 0 20px rgba(163, 230, 53, 0.25);
+}
