@@ -87,6 +87,16 @@
     </div>
     <form id="logForm">
         <div id="log">
+            <div class="radio-inputs">
+                <label class="radio" >   
+                    <input checked name="auth" type="radio" id="radio_log_1">
+                    <span class="radio-item">Zaloguj się</span>
+                </label>
+                <label class="radio" >
+                    <input name="auth" type="radio" onclick="rej()" id="radio_rej_1">
+                    <span class="radio-item"> Zarejestruj się</span>
+                </label>
+            </div>
             <span>Zaloguj się <img src="rysunek-1.svg" width="40" alt="" onclick="log()" ></span>
             <span><input type="email" id="email" placeholder="podaj e mail"required></span>
             <span><input type="password" id="haslo_vis_log" placeholder="podaj hasło" required></span>
@@ -101,6 +111,17 @@
     </form>
     <form id="rejForm">
         <div id="rej">
+            <div class="radio-inputs">
+                <label class="radio" >   
+                    <input  name="auth" type="radio" onclick="log()" id="radio_log_2">
+                    <span class="radio-item">Zaloguj się</span>
+                </label>
+                <label class="radio" >
+                    <input checked name="auth" type="radio" id="radio_rej_2">
+                    
+                    <span class="radio-item"> Zarejestruj się</span>
+                </label>
+            </div>
             <span>Zarejestruj się<img src="rysunek-1.svg" width="40" alt="" onclick="rej()" ></span>
             <span><input type="text" placeholder="Imię" id="imie" required></span>
             <span><input type="text" placeholder="Nazwisko" id="nazwisko" required></span>

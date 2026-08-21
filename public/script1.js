@@ -27,9 +27,13 @@ let opt_vis = 0;
         if (log_vis == 0) {
             document.getElementById("log").style.visibility = "visible";
             log_vis = 1;
+            document.getElementById("radio_log_1").checked = true;
+            document.getElementById("radio_rej_1").checked = false;
         } else {
             document.getElementById("log").style.visibility = "hidden";
             log_vis = 0;
+            
+            
         }
     }
     
@@ -42,11 +46,15 @@ let opt_vis = 0;
         if (rej_vis == 0) {
             document.getElementById("rej").style.visibility = "visible";
             rej_vis = 1;
+            document.getElementById("radio_rej_2").checked = true;
+            document.getElementById("radio_log_2").checked = false;
         } else {
             document.getElementById("rej").style.visibility = "hidden";
             rej_vis = 0;
+            
         }
     }
+    
         function pokazHaslo_log() {
         const haslo = document.getElementById("haslo_vis_log");
 
