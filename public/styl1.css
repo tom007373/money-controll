@@ -300,7 +300,7 @@ ul {
 #log input {
     font-size: 20px;
     padding: 5px;
-    border-radius: 10px;
+
 
     background-color: #252525;
     color: #ffffff;
@@ -313,7 +313,7 @@ ul {
 #log button {
     font-size: 20px;
     padding: 5px;
-    border-radius: 10px;
+
 
     background-color: #252525;
     color: #ffffff;
@@ -650,7 +650,7 @@ ul {
 .radio-inputs input:checked ~ .radio {
   clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
-.input__container {
+.input__container_log1 {
   position: relative;
   background: #818181;
   padding: 20px;
@@ -678,22 +678,23 @@ ul {
  background-color: var(--btn-color);
 
  outline: none;
- box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
+ box-shadow:
+  0 0 0.25em 0.05em var(--glow-color),
+  0 0 0.75em 0.15em var(--glow-spread-color),
+  inset 0 0 0.2em 0.1em var(--glow-color);
  text-shadow: 0 0 .5em var(--glow-color);
  position: relative;
  transition: all 0.3s;
  text-align: center;
 }
 
-.input__container:hover {
+.input__container_log1:hover {
   transform: rotateX(5deg) rotateY(1 deg) scale(1.05);
   box-shadow: 15px 15px 0 -5px #4b4b4a;
 }
 
 
-.shadow__input {
+.shadow__input_log1 {
   content: "";
   position: absolute;
   width: 100%;
@@ -710,7 +711,7 @@ ul {
   filter: blur(20px);
 }
 
-.input__button__shadow {
+.input__button__shadow_log1 {
   cursor: pointer;
   border: 3px solid #000;
   background: #767676;
@@ -726,19 +727,19 @@ ul {
   text-transform: uppercase;
 }
 
-.input__button__shadow:hover {
+.input__button__shadow_log1:hover {
   background: #ffffff;
   transform: translateZ(10px) translateX(-5px) translateY(-5px);
   box-shadow: 5px 5px 0 0 #000;
 }
 
-.input__button__shadow svg {
+.input__button__shadow_log1 svg {
   fill: #000;
   width: 25px;
   height: 25px;
 }
 
-.input__search {
+.input__search_log1 {
   width: 100%;
   outline: none;
   border: 3px solid #000;
@@ -754,21 +755,153 @@ ul {
   letter-spacing: -0.5px;
 }
 
-.input__search::placeholder {
+.input__search_log1::placeholder {
   color: #666;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.input__search:hover,
-.input__search:focus {
+.input__search_log1:hover,
+.input__search_log1:focus {
   background: #f0f0f0;
   transform: translateZ(20px) translateX(-5px) translateY(-5px);
   box-shadow: 5px 5px 0 0 #000;
 }
 
-.input__container::before {
+.input__container_log1::before {
   content: "USERNAME";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: #767676;
+  color: #000;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 14px;
+  transform: translateZ(50px);
+  z-index: 4;
+  border: 2px solid #000;
+}
+.input__container_log2 {
+  position: relative;
+  background: #818181;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  border: 4px solid #000;
+  max-width: 350px;
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  margin-bottom: 10px;
+
+  perspective: 1000px;
+  box-shadow: 10px 10px 0 #000;
+  --glow-color: rgb(230, 230, 230);
+--glow-spread-color: rgba(150, 150, 150, 0.7);
+--enhanced-glow-color: rgb(255, 255, 255);
+--btn-color: rgb(35, 35, 35);
+ border: .25em solid var(--glow-color);
+
+ color: var(--glow-color);
+ font-size: 30px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+
+ outline: none;
+ box-shadow:
+  0 0 0.25em 0.05em var(--glow-color),
+  0 0 0.75em 0.15em var(--glow-spread-color),
+  inset 0 0 0.2em 0.1em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+ text-align: center;
+}
+
+.input__container_log2:hover {
+  transform: rotateX(5deg) rotateY(1 deg) scale(1.05);
+  box-shadow: 15px 15px 0 -5px #4b4b4a;
+}
+
+
+.shadow__input_log2 {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translateZ(-50px);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 107, 107, 0.4) 0%,
+    rgba(255, 107, 107, 0.1) 100%
+  );
+  filter: blur(20px);
+}
+
+.input__button__shadow_log2 {
+  cursor: pointer;
+  border: 3px solid #000;
+  background: #767676;
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transform: translateZ(20px);
+  position: relative;
+  z-index: 3;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.input__button__shadow_log2:hover {
+  background: #ffffff;
+  transform: translateZ(10px) translateX(-5px) translateY(-5px);
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.input__button__shadow_log2 svg {
+  fill: #000;
+  width: 25px;
+  height: 25px;
+}
+
+.input__search_log2 {
+  width: 100%;
+  outline: none;
+  border: 3px solid #000;
+  padding: 15px;
+  font-size: 18px;
+  background: #fff;
+  color: #000;
+  transform: translateZ(10px);
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  z-index: 3;
+  font-family: "Roboto", Arial, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.input__search_log2::placeholder {
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.input__search_log2:hover,
+.input__search_log2:focus {
+  background: #f0f0f0;
+  transform: translateZ(20px) translateX(-5px) translateY(-5px);
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.input__container_log2::before {
+  content: "HASŁO";
   position: absolute;
   top: -15px;
   left: 20px;
