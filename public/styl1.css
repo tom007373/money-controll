@@ -313,7 +313,7 @@ ul {
 #log button {
     font-size: 20px;
     padding: 5px;
-
+    
 
     background-color: #252525;
     color: #ffffff;
@@ -322,6 +322,7 @@ ul {
     font-family: "Saira Stencil", sans-serif;
     font-optical-sizing: auto;
 }
+
 
 #log input::placeholder {
     color: #aaaaaa;
@@ -545,7 +546,7 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: center;
-  cursor: pointer;
+
   font-size: 20px;
   user-select: none;
   gap: 10px;
@@ -903,7 +904,7 @@ ul {
 .input__container_log2::before {
   content: "HASŁO";
   position: absolute;
-  top: -15px;
+  top: -20px;
   left: 20px;
   background: #767676;
   color: #000;
@@ -913,4 +914,7 @@ ul {
   transform: translateZ(50px);
   z-index: 4;
   border: 2px solid #000;
+}
+.log div,span{
+  margin-bottom: 10px;
 }
