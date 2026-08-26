@@ -132,6 +132,8 @@ button:hover {
     align-items: flex-start;
     width: 100%;
     flex-wrap: wrap;
+    display: flex;
+  align-items: stretch; 
 }
 
 .pods {
