@@ -168,6 +168,9 @@ function med(){
 }
 document.getElementById("rejForm").addEventListener("submit", go_rej);
 async function go_log(event){
+
+    console.log("log1")
+
     event.preventDefault();
 
     const email = document.getElementById("email").value;
