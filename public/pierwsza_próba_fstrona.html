@@ -298,10 +298,10 @@
     const wynik = await odpowiedz.json();
 
     if (odpowiedz.ok) {
-        alert(wynik.message);
-        document.getElementById("transakcjaForm").addEventListener("submit", dodajTransakcje);
+            alert(wynik.message);
 
-        document.getElementById("data").valueAsDate = new Date();
+    document.getElementById("transakcjaForm").reset();
+    document.getElementById("data").valueAsDate = new Date();
 
     } else {
         alert("Błąd: " + wynik.message);
@@ -318,5 +318,6 @@
             sett_vis = 0;
         }
     }
+    document.getElementById("transakcjaForm").addEventListener("submit", dodajTransakcje);
 </script>
 </html>
