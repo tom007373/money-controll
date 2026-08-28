@@ -299,9 +299,7 @@
 
     if (odpowiedz.ok) {
         alert(wynik.message);
-        document
-            .getElementById("transakcjaForm")
-            .addEventListener("submit", dodajTransakcje);
+        document.getElementById("transakcjaForm").addEventListener("submit", dodajTransakcje);
 
         document.getElementById("data").valueAsDate = new Date();
 
