@@ -199,7 +199,23 @@
         </div>
         
             <div class="tab_row">
-                <div class="tab" ></div>
+                <div class="tab">
+                    <table id="tabelaTransakcji" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Typ</th>
+                                <th>Kategoria</th>
+                                <th>Nazwa</th>
+                                <th>Kwota</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="listaTransakcji">
+
+                        </tbody>
+                    </table>
+                </div>
                 
             </div>
     
@@ -253,6 +269,7 @@
 
             console.log(dane);
 
+            await wczytajTransakcje();
         }
 
         sprawdzLogowanie();
@@ -318,6 +335,31 @@
             sett_vis = 0;
         }
     }
+
+    async function wczytajTransakcje() {
+
+        const odpowiedz = await fetch("/transactions");
+        const transakcje = await odpowiedz.json();
+
+        const tabela = document.getElementById("listaTransakcji");
+        tabela.innerHTML = "";
+
+        transakcje.forEach(transakcja => {
+
+            tabela.innerHTML += `
+                <tr>
+                    <td>${transakcja.data}</td>
+                    <td>${transakcja.typ}</td>
+                    <td>${transakcja.kategoria}</td>
+                    <td>${transakcja.nazwa}</td>
+                    <td>${transakcja.kwota} zł</td>
+                </tr>
+            `;
+
+        });
+
+    }
+
     document.getElementById("transakcjaForm").addEventListener("submit", dodajTransakcje);
 </script>
 </html>

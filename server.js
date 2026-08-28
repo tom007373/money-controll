@@ -205,6 +205,37 @@ app.post("/login", async (req, res) => {
         }
     });
 
+    app.get("/transactions", async (req, res) => {
+
+    if (!req.session.user) {
+        return res.status(401).json({
+            message: "Musisz być zalogowany."
+        });
+    }
+
+    try {
+
+        const wynik = await pool.query(
+            `SELECT id, typ, kategoria, nazwa, kwota, data
+             FROM transactions
+             WHERE user_id = $1
+             ORDER BY data DESC, id DESC`,
+            [req.session.user.id]
+        );
+
+        res.json(wynik.rows);
+
+    } catch (err) {
+
+        console.error(err);
+
+        res.status(500).json({
+            message: "Błąd podczas pobierania transakcji."
+        });
+    }
+
+});
+
 app.get("/check-login", (req, res) => {
 
     if (req.session.user) {
