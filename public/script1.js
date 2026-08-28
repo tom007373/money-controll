@@ -21,16 +21,16 @@ let opt_vis = 0;
     function log() {
 
         
-        document.getElementById("rej").style.visibility = "hidden";
+        document.getElementById("rej").style.display = "none";
         rej_vis = 0;
 
         if (log_vis == 0) {
-            document.getElementById("log").style.visibility = "visible";
+            document.getElementById("log").style.display = "flex";
             log_vis = 1;
             document.getElementById("radio_log_1").checked = true;
             document.getElementById("radio_rej_1").checked = false;
         } else {
-            document.getElementById("log").style.visibility = "hidden";
+            document.getElementById("log").style.display = "none";
             log_vis = 0;
             
             
@@ -40,16 +40,16 @@ let opt_vis = 0;
     function rej() {
 
         
-        document.getElementById("log").style.visibility = "hidden";
+        document.getElementById("log").style.display = "none";
         log_vis = 0;
 
         if (rej_vis == 0) {
-            document.getElementById("rej").style.visibility = "visible";
+            document.getElementById("rej").style.display = "flex";
             rej_vis = 1;
             document.getElementById("radio_rej_2").checked = true;
             document.getElementById("radio_log_2").checked = false;
         } else {
-            document.getElementById("rej").style.visibility = "hidden";
+            document.getElementById("rej").style.display = "none";
             rej_vis = 0;
             
         }

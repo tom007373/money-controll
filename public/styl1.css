@@ -264,7 +264,7 @@ ul {
 
 #log {
     position: fixed;
-    visibility: hidden;
+    display: none;
     width: 25%;
     height: auto;
     padding: 20px;
@@ -273,7 +273,7 @@ ul {
     transform: translate(-50%, -50%);
 
     font-size: 30px;
-    display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -330,7 +330,7 @@ ul {
 
 #rej {
     position: fixed;
-    visibility: hidden;
+    display: none;
     width: 25%;
     height: auto;
     padding: 10px;
@@ -339,7 +339,7 @@ ul {
     transform: translate(-50%, -50%);
 
     font-size: 30px;
-    display: flex;
+
     justify-content: center;
     align-items: center;
 
